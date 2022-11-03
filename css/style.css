@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color:#2E293F;
+}
+
+header{
+  z-index: 10000;
+}
+
+main{
+  margin-top: 150px;
+  min-height: calc(100vh - 60px - 60px);
+}
+
+.bg{
+  background-color:rgb(17, 57, 57);
+}
+
+.row{
+  background-color:#5a469a;
+  padding: 0;
+}
+
+.films-content{
+  display: grid;
+  grid-template-columns: repeat( Auto-fill, minmax(280px, 1fr));
+  padding: 6px;
+  gap: 15px;
+}
+
+.loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+ background-color: white;
+}
+
+/* ====================== MODAL CONTENT  ======================*/
+
+.modal-contents{
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top:0;
+  z-index: 99999999;
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contents .modal-content{
+  max-width: 350px;
+  min-height: 450px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+#close{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.shadow-lg{
+  animation-name: modalAnimate;
+  animation-duration: 0.4s;
+  animation-fill-mode: backwards;
+  animation-direction: alternate;
+  transition: all 0.4s ease;
+  animation-iteration-count: 1;
+}
+.bookmark{
+  top:-5px;
+  cursor: pointer;
+}
+
+.bookmark:active{
+  background-color: rgb(255, 64, 0) !important;
+}
+
+.bookmarkModal{
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items:center;
+  z-index: 10000000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.them-box{
+  width: 60px;
+  height: 20px;
+  background-color: white;
+  border-radius:20px;
+}
+
+.them-box button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  border-radius:15px;
+}
+
+.card-title {
+  display: -webkit-box !important;
+  margin-bottom: 18px !important;
+  font-size: 18px !important;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 30px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 1  !important;
+  line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  height: 28px;
+}
+
+.card-paragrft
+{
+  display: -webkit-box !important;
+  margin-bottom: 18px !important;
+  font-size: 18px !important;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 30px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 1  !important;
+  line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  height: 35px !important;
+}
+
+.card-paragrfts{
+  display: -webkit-box !important;
+  margin-bottom: 18px !important;
+  font-size: 18px !important;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 30px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 3  !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+}
+
+.bookmark-paragrft{
+  font-size: 15px;
+  line-height: normal;
+  display: -webkit-box !important;
+  margin-bottom: 18px !important;
+  font-size: 18px !important;
+  font-family: monospace;
+  font-weight: bold;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 3  !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+}
+
+
