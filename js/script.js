@@ -104,7 +104,6 @@ $(".btn-success").addEventListener("click", () => {
   },2000);
 });
 
-// ============ ====== ====== ====== FIND FILMS END ====== ====== ====== ====== ====== ====//
 
 // function renderSearchInput(data) {
   
@@ -150,7 +149,7 @@ function renderSearchResult(data = []) {
   });
 }
 
-//  ---------------------- MODAL WINDOW --------------------------
+// modal windov
 
 //closeBtn
 
@@ -158,7 +157,7 @@ $("#close").addEventListener("click", () => {
   $(".modal-contents").classList.add("d-none");
 });
 
-//  ---------------------- MODAL WINDOW SHOW --------------------------
+// modal shov
 
 function modalWindow(id) {
   $(".wrap").innerHTML = "";
@@ -187,9 +186,9 @@ function modalWindow(id) {
   $(".wrap").appendChild(contents);
 }
 
-//  ---------------------- MODAL WINDOW SHOW END ---------------------
+// moodal end
 
-// ---------------BOOKMARK ITEM ADD -------------------
+//boolmark
 
 const bookmark = [];
 
@@ -200,7 +199,6 @@ function addBookmark(id) {
     return element.id === id;
   });
   
-  console.log(el);
   if (!bookmark.includes(el[0])) {
     bookmark.push(el[0]);
   } else {
@@ -214,13 +212,22 @@ function addBookmark(id) {
     bookmark.forEach((e) => {
       const item = createElement(
         "div",
-        "card mb-2",
+        "card bg-warning mb-2",
         `
-      <div class="p-3">
+      <div class="p-3 position-relative">
+        <span type="button" class="deletBookmark border border-info px-1 bg-danger rounded bookmark-delet" bookmark-btn-id="${e.id}" data-mdb-ripple-color="dark">
+          <i  bookmark-btn-id="${e.id}" class="deletBookmark fas fa-times text-white"></i>
+       </span>
         <div class="d-flex gap-3 ">
          <div><img class="rounded" src="${e.smallImg}" alt="card-img" width="90px" height="100px"></div>
           <div>
-            <p class="bookmark-paragrft">${e.summary}</p>
+          
+            <p class="bookmark-paragrft text-dark">${e.summary}</p>
+
+            <div class="d-flex justify-content-between align-items-center">
+            <span class=" ps-5 ms-5">${e.year}</span>
+            <i class="far fa-heart text-danger"></i>
+            </div>
           </div>
           </div>
       </div>
@@ -231,10 +238,29 @@ function addBookmark(id) {
   }
 }
 
+//deleteBookmark
+
+
+
+// $(".bookmarks").addEventListener("click", (e)=>{
+//   if(e.target.matches(".deletBookmark")){
+//     let clickedBookmark = addBookmark(e.target.getAttribute("bookmark-btn-id")); 
+//     bookmark = bookmark.filter((bookmark) => bookmark.id !== Number(clickedBookmark));   
+//     renderAllMovies(bookmark)
+//     console.log(e);
+//     console.log(bookmark);
+//   }else{
+//     console.log("vajaj");
+//   }
+// })
+
 $(".films-content").addEventListener("click", (e) => {
   if (e.target.matches(".bookmark")) {
     addBookmark(e.target.getAttribute("data-bookmark"));
   }
+
+
+
 });
 
 //--------------- MODAL ---------------//
@@ -242,6 +268,7 @@ window.addEventListener("click", (e) => {
   if (e.target.matches("modal-contents")) {
     $(".modal-content").classList.toggle("shadow-lg");
   }
+
 
   if (e.target.classList.contains("modal-open")) {
     $(".modal-contents").classList.remove("d-none");

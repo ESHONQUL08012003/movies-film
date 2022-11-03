@@ -109,6 +109,12 @@ main{
   border-radius:20px;
 }
 
+.bookmark-delet {
+  position: absolute;
+  right: 8px;
+    top: 7px;
+}
+
 .them-box button{
   display: flex;
   justify-content: center;
