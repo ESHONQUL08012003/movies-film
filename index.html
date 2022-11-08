@@ -26,7 +26,7 @@
         <a href="./index.html"><img class="rounded" src="./imgs/logo.png" width="150" height="50" alt="logo"></a>
 
         <nav>
-          <ul class="list-unstyled d-flex gap-5">
+          <ul class="list-unstyled d-none d-md-flex gap-5 m-0">
             <li>
               <a class="fw-bold" href="#">Boshqa sahifa</a>
             </li>
@@ -50,16 +50,15 @@
     </div>
     <hr>
     <div class="container">
-      <div class="d-flex align-items-center gap-5">
+      <div class="d-md-flex flex-co align-items-center gap-5">
 
         <input id="searchInput" type="text" class="form-control py-2 bg-info text-black" placeholder="search film" />
+        
         <select id="category_sort" class="form-select py-2 bg-info text-black ">
           <option value="all" disabled selected>All</option>
         </select>
 
-
-        <input type="number" id="rating" min="1" max="10" class="form-control py-2 bg-info" placeholder="film rating"
-          value="1" />
+        <input type="number" id="rating" min="1" max="10" class="form-control py-2 bg-info" placeholder="film rating" value="1" />
 
         <button class="btn btn-success">Search</button>
       </div>
@@ -105,13 +104,14 @@
 
   <footer class="bg-dark text-white w-100 mt-3 p-3">
     <div class="container">
-     <div class="d-flex justify-content-between align-items-center">
-      <div>
+
+     <div class="d-md-flex justify-content-between align-items-center text-center">
+      <div class="mb-3">
         <a href="./index.html"><img class="rounded" src="./imgs/logo.png" width="150" height="50" alt="logo"></a>
       </div>
 
-      <nav>
-        <ul class="list-unstyled d-flex gap-5">
+      <nav class="mb-3">
+        <ul class="list-unstyled flex-column flex-sm-row d-flex justify-content-center gap-sm-5 gap-2 m-0">
           <li>
             <a class="fw-bold" href="#">Boshqa sahifa</a>
           </li>
@@ -127,7 +127,7 @@
         </ul>
       </nav>
 
-      <ul class="list-unstyled d-flex gap-3 m-0">
+      <ul class="list-unstyled d-flex justify-content-center gap-3 m-0 mb-3">
 
         <li>
           <a href="https://t.me/+7wnOA7kOjl05NDli"><i class="fab fa-telegram-plane fa-2x"></i></a>
@@ -141,6 +141,7 @@
         
       </ul>
      </div>
+
     </div>
   </footer>
 

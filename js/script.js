@@ -1,5 +1,7 @@
-movies.splice(42);
+movies.splice(15);
 
+
+console.log(movies);
 const allMovies = movies.map((e) => {
   return {
     title: e.title,
@@ -36,6 +38,7 @@ function renderAllMovies() {
        </a>
       </div>
 
+      <div class="card-footer"><span>${e.rating}</span></div>
   </div>
 
 `
@@ -139,7 +142,7 @@ function renderSearchResult(data = []) {
         <i  data-bookmark=${e.id}  class="bookmark far fa-bookmark"></i>
        </a>
       </div>
-
+      <div class="card-footer"><span>${e.rating}</span></div>
   </div>
 
 `
